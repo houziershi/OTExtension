@@ -45,6 +45,10 @@ ${OBJECTS_UTIL}: ${SOURCES_UTIL}$
 ${OBJECTS_OT}: ${SOURCES_OT}$
 	@cd ot; ${CC} -c ${CFLAGS} ${INCLUDE} ${BATCH} *.cpp 
 
+install:
+	install -d /usr/local/lib
+	install -m 0644 libOTExtension.so /usr/local/lib
+
 clean:
 	rm -rf ot.exe ${OBJECTS_UTIL} ${OBJECTS_OTMAIN} ${OBJECTS_OT}
 
