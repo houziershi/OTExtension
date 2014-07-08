@@ -47,7 +47,11 @@ ${OBJECTS_OT}: ${SOURCES_OT}$
 
 install:
 	install -d /usr/local/lib
+	install -d /usr/local/include/OTExtension/ot
+	install -d /usr/local/include/OTExtension/util
 	install -m 0644 libOTExtension.so /usr/local/lib
+	install -m 0644 ot/*.h /usr/local/include/OTExtension/ot
+	install -m 0644 util/*.h /usr/local/include/OTExtension/util
 
 clean:
 	rm -rf ot.exe ${OBJECTS_UTIL} ${OBJECTS_OTMAIN} ${OBJECTS_OT}
