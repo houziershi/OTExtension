@@ -12,9 +12,9 @@
 #include "../util/cbitvector.h"
 #include "../util/socket.h"
 #include <ctime>
-#include "../util/Miracl/ecn.h"
-#include "../util/Miracl/big.h"
-#include "../util/Miracl/ec2.h"
+#include <miracl/ecn.h>
+#include <miracl/big.h>
+#include <miracl/ec2.h>
 #include <iostream>
 #include <cstring>
 #include <fstream>

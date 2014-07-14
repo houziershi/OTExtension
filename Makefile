@@ -5,7 +5,7 @@ COMPILER_OPTIONS=-O3
 BATCH=
 
 # external libs (linking options)
-LIBRARIES=-Wl,--no-whole-archive -lpthread -lmiracl -lssl -lcrypto #-lgmp -lgmpxx 
+LIBRARIES=$(INCLUDE_ARCHIVES_START) -lpthread -lmiracl -lssl -lcrypto #-lgmp -lgmpxx 
 LIBRARIES_DIR=-L/usr/local/ssl/lib/
 
 # target names
@@ -30,7 +30,7 @@ INCLUDE=-I.. $(OPENSSL_INCLUDES)
 all: ${OT_LIBRARY}
 
 otlib: ${OBJECTS_UTIL} ${OBJECTS_OT}
-	${CC} -shared -o libOTExtension.so \
+	${CC} ${SHARED_LIB_OPT} -o libOTExtension${SHARED_LIB_EXT} \
 	${OBJECTS_UTIL} ${OBJECTS_OT} ${MIRACL_PATH} ${LIBRARIES} ${LIBRARIES_DIR}
 
 otmain: ${OBJECTS_UTIL} ${OBJECTS_MIRACL} ${OBJECTS_OT} ${OBJECTS_OTMAIN}
@@ -49,10 +49,11 @@ install:
 	install -d /usr/local/lib
 	install -d /usr/local/include/OTExtension/ot
 	install -d /usr/local/include/OTExtension/util
-	install -m 0644 libOTExtension.so /usr/local/lib
+	install -m 0644 libOTExtension${SHARED_LIB_EXT} /usr/local/lib
 	install -m 0644 ot/*.h /usr/local/include/OTExtension/ot
 	install -m 0644 util/*.h /usr/local/include/OTExtension/util
 
 clean:
 	rm -rf ot.exe ${OBJECTS_UTIL} ${OBJECTS_OTMAIN} ${OBJECTS_OT}
+	rm -f *${SHARED_LIB_EXT}
 
