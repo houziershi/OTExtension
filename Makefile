@@ -5,7 +5,7 @@ COMPILER_OPTIONS=-O3
 BATCH=
 
 # external libs (linking options)
-LIBRARIES=$(INCLUDE_ARCHIVES_START) -lpthread -lmiracl -lssl -lcrypto #-lgmp -lgmpxx 
+LIBRARIES=$(INCLUDE_ARCHIVES_START) -lpthread -lmiracl -lssl -lcrypto $(INCLUDE_ARCHIVES_END) #-lgmp -lgmpxx 
 LIBRARIES_DIR=-L/usr/local/ssl/lib/
 
 # target names
