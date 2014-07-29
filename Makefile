@@ -4,6 +4,8 @@ CFLAGS=-fPIC
 COMPILER_OPTIONS=-O3
 BATCH=
 
+SHARED_LIB_EXT=.so
+
 # external libs (linking options)
 LIBRARIES=$(INCLUDE_ARCHIVES_START) -lpthread -lmiracl -lssl -lcrypto $(INCLUDE_ARCHIVES_END) #-lgmp -lgmpxx 
 LIBRARIES_DIR=-L/usr/local/ssl/lib/
