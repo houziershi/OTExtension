@@ -188,6 +188,7 @@ BOOL NaorPinkas::ReceiverECC(int nSndVals, int nOTs, CBitVector& choices,
 	ebrick bg, bc;
 #else
 	EC2 PK_sigma[nOTs], PK0, ecctmp, invtmp, pDec[nOTs], pC[nSndVals], g;
+	irand(time(NULL)-100);
 	ebrick2 bg, bc;
 #endif
 	Big pK[nOTs], bigtmp, x, y, xtmp, ytmp; 
@@ -273,6 +274,7 @@ BOOL NaorPinkas::ReceiverECC(int nSndVals, int nOTs, CBitVector& choices,
 
 BOOL NaorPinkas::SenderECC(int nSndVals, int nOTs, CSocket& socket, BYTE* ret) 
 {
+	irand(time(NULL)+100);
 	Big alpha, PKr, bigtmp, x, y, xtmp, ytmp;
 #ifdef USE_PRIME_FIELD
 	ECn pCr[nSndVals], pC[nSndVals], ecctmp, PK0r, invtmp, g;
