@@ -2,6 +2,7 @@
  * The Naor-Pinkas OT protocols that does not require a random oracle
  */
 
+#pragma once
 #ifndef __Naor_Pinkas_NORO_H_
 #define __Naor_Pinkas_NORO_H_
 

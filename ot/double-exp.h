@@ -1,3 +1,4 @@
+#pragma once
 #ifndef __DOUBLE_EXP_H_
 #define __DOUBLE_EXP_H_
 #include "../util/typedefs.h"

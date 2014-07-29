@@ -1,3 +1,4 @@
+#pragma once
 #ifndef __brick_h__
 #define __brick_h__
 

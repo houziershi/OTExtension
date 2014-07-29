@@ -5,6 +5,7 @@
  *      Author: mzohner
  */
 
+#pragma once
 #ifndef MASKINGFUNCTION_H_
 #define MASKINGFUNCTION_H_
 

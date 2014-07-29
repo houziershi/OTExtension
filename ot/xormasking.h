@@ -5,6 +5,7 @@
  *      Author: mzohner
  */
 
+#pragma once
 #ifndef XORMASKING_H_
 #define XORMASKING_H_
 

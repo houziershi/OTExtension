@@ -2,6 +2,7 @@
  * Methods for the OT Extension routine
  */
 
+#pragma once
 #ifndef __OT_EXTENSION_H_
 #define __OT_EXTENSION_H_
 

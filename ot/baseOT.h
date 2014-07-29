@@ -5,6 +5,7 @@
  *      Author: mzohner
  */
 
+#pragma once
 #ifndef BASEOT_H_
 #define BASEOT_H_
 

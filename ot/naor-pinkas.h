@@ -2,6 +2,7 @@
  * Compute the Naor-Pinkas Base OTs
  */
 
+#pragma once
 #ifndef __Naor_Pinkas_H_
 #define __Naor_Pinkas_H_
 

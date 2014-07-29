@@ -5,6 +5,7 @@
  *      Author: mzohner
  */
 
+#pragma once
 #ifndef ASHAROVLINDELL_H_
 #define ASHAROVLINDELL_H_
 
