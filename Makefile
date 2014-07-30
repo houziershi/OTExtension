@@ -4,7 +4,13 @@ CFLAGS=-fPIC
 COMPILER_OPTIONS=-O3
 BATCH=
 
-SHARED_LIB_EXT=.so
+ifeq ($(uname_S),Linux)
+	SHARED_LIB_EXT=.so
+endif
+
+ifeq ($(uname_S),Darwin)
+	SHARED_LIB_EXT=.dylib
+endif
 
 # external libs (linking options)
 LIBRARIES=$(INCLUDE_ARCHIVES_START) -lpthread -lmiracl -lssl -lcrypto $(INCLUDE_ARCHIVES_END) #-lgmp -lgmpxx 
