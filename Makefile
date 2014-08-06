@@ -15,7 +15,7 @@ endif
 
 # external libs (linking options)
 LIBRARIES=$(INCLUDE_ARCHIVES_START) -lpthread -lmiracl -lssl -lcrypto $(INCLUDE_ARCHIVES_END) #-lgmp -lgmpxx 
-LIBRARIES_DIR=-L$(builddir)/OpenSSL -L$(builddir)/MiraclCPP -L$(builddir)/CryptoPP
+LIBRARIES_DIR=-L$(prefix)/ssl/lib -L$(prefix)/lib
 
 # target names
 OT_MAIN=otmain
@@ -31,8 +31,8 @@ OBJECTS_OT=ot/*.o
 #OBJECTS_MIRACL=util/Miracl/*.o
 
 # includes
-MIRACL_PATH=-I$(builddir)/MiraclCPP
-OPENSSL_INCLUDES=-I$(builddir)/OpenSSL
+MIRACL_PATH=-I$(includedir)
+OPENSSL_INCLUDES=-I$(prefix)/ssl/include
 INCLUDE=-I.. $(OPENSSL_INCLUDES) $(MIRACL_PATH)
 
 ## targets ##
