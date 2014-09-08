@@ -1,5 +1,5 @@
 # compiler options
-CC=g++ -g
+CXX=g++ -g
 CFLAGS=-fPIC
 COMPILER_OPTIONS=-O3
 BATCH=
@@ -39,20 +39,20 @@ INCLUDE=-I.. $(OPENSSL_INCLUDES) $(MIRACL_PATH)
 all: ${OT_LIBRARY}
 
 otlib: ${OBJECTS_UTIL} ${OBJECTS_OT}
-	${CC} ${SHARED_LIB_OPT} -o libOTExtension${SHARED_LIB_EXT} \
+	${CXX} ${SHARED_LIB_OPT} -o libOTExtension${SHARED_LIB_EXT} \
 	${OBJECTS_UTIL} ${OBJECTS_OT} ${MIRACL_PATH} ${LIBRARIES} ${LIBRARIES_DIR}
 
 otmain: ${OBJECTS_UTIL}  ${OBJECTS_OT} ${OBJECTS_OTMAIN}
-	${CC} -o ot.exe $(INCLUDE) ${CFLAGS} ${OBJECTS_OTMAIN} ${OBJECTS_UTIL} ${OBJECTS_OT} ${LIBRARIES} ${COMPILER_OPTIONS}
+	${CXX} -o ot.exe $(INCLUDE) ${CFLAGS} ${OBJECTS_OTMAIN} ${OBJECTS_UTIL} ${OBJECTS_OT} ${LIBRARIES} ${COMPILER_OPTIONS}
 
 ${OBJECTS_OTMAIN}: ${SOURCES_OTMAIN}$
-	@cd mains; ${CC} -c ${INCLUDE} ${CFLAGS} otmain.cpp 
+	@cd mains; ${CXX} -c ${INCLUDE} ${CFLAGS} otmain.cpp 
 
 ${OBJECTS_UTIL}: ${SOURCES_UTIL}$  
-	@cd util; ${CC} -c ${CFLAGS} ${INCLUDE} ${BATCH} *.cpp
+	@cd util; ${CXX} -c ${CFLAGS} ${INCLUDE} ${BATCH} *.cpp
 
 ${OBJECTS_OT}: ${SOURCES_OT}$
-	@cd ot; ${CC} -c ${CFLAGS} ${INCLUDE} ${BATCH} *.cpp 
+	@cd ot; ${CXX} -c ${CFLAGS} ${INCLUDE} ${BATCH} *.cpp 
 
 install:
 	install -d $(libdir)
